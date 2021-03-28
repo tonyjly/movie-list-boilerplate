@@ -26,26 +26,37 @@ class App extends React.Component {
       query: '' // searchText
     };
 
-    this.searchMovie = this.searchMovie.bind(this)
+    this.display = (this.state.query === '')
+    ? this.state.movies
+    : this.state.movies.filter(title =>
+      title.toLowerCase().includes(query.toLocaleLowerCase())
+    );
+
+    this.searchMovie = this.searchMovie.bind(this);
     this.searchText = this.searchText.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
+    this.searchMovies = this.searchMovies.bind(this);
   };
 
   searchMovie(searchText) {
     this.setState({
       query: searchText
-    }, ()=>{console.log('searchText:', this.state.query.query)});
+    }, ()=>{console.log('searchText:', this.state.query)});
   };
 
   searchText() {
     this.setState({
       query: event.target.value
-    }, () => {console.log(this.state)});
+    }, () => {console.log('query', this.state.query)});
   };
 
   clickHandler(event) {
     event.preventDefault();
-    this.searchMovie(this.state);
+    this.searchMovie(this.state.query);
+  };
+
+  searchMovies(event) {
+    this.searchText(event.target.value);
   };
 
   render() {
@@ -55,18 +66,21 @@ class App extends React.Component {
         <hr class="solid" />
         <br/>
         <form>
-          <input type="text" name="query" placeholder="Search..." value={this.state.query || ''} onChange={(event) => this.setState({query: event.target.value})} />
+          <input type="text" placeholder="Search..." value={this.state.query || ''} onChange={this.searchMovies} />
           <button type="submit" value="Go!" onClick={this.clickHandler}>Go!</button>
         </form>
         <br/>
-        <MovieList movies={this.state.movies} query={this.state.query} />
+        <MovieList movies={this.display} query={this.state.query} />
       </div>
     )
   }
-
 };
 
 export default App;
+
+// <input type="text" placeholder="Search..." value={this.state.query || ''} onChange={(event) => this.setState({query: event.target.value})} />
+
+
 
 // filter example: https://stackoverflow.com/questions/47784442/react-redux-search-filter-update-app-state-as-you-type
 
