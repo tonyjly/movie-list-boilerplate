@@ -25,5 +25,9 @@ module.exports = {
   mode: 'development',
   resolve: {
     extensions: ['.js', '.jsx']
+  },
+  watchOptions: {
+    poll: true,
+    ignored: /node_modules/
   }
 };
