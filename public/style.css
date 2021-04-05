@@ -1,0 +1,33 @@
+body {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  background-color: dimgray;
+  color: white;
+}
+
+#app {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.list {
+  margin: 10px;
+  list-style-type: none;
+  /* list-style-type: "✅"; */
+  /* list-style-type: "→ "; */
+  align-content: left;
+}
+
+.btn {
+  color: white;
+  background-color: gray;
+  display: inline-block;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  outline: none;
+}

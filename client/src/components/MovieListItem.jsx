@@ -2,7 +2,7 @@ import React from 'react';
 
 const MovieListItem = (props) => (
   <li>
-    <span>{props.movie.title}</span>
+    <span class="list">{props.movie.title}</span>
   </li>
 )
 
