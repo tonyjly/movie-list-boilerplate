@@ -3,13 +3,11 @@ import MovieListItem from './MovieListItem.jsx'
 
 
 const MovieList = (props) => (
-  <div>
-
+  <ul>
     {props.list.map((item, i) => (
       <MovieListItem key={i} movie={item} />
     ))}
-
-  </div>
+  </ul>
 );
 
 export default MovieList;
