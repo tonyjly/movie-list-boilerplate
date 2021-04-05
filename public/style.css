@@ -44,3 +44,14 @@ li {
   outline: none;
   margin-left: 1px;
 }
+
+.watched {
+  color: white;
+  background-color: green;
+  border: none;
+  outline: none;
+}
+
+.right {
+  float: right;
+}

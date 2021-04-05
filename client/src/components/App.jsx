@@ -37,8 +37,7 @@ class App extends React.Component {
       const newMovie = {};
       newMovie.title = this.state.add;
       this.setState(() => {
-        this.state.movies.push(newMovie)
-        return this.state.movies;
+        return this.state.movies.push(newMovie)
       });
     };
   };
