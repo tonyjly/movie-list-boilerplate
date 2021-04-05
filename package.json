@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server",
+    "//": "nodemon ./server/index.js",
+    "start": "live-server public",
     "build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +24,8 @@
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
+    "live-server": "^1.2.1",
     "nodemon": "^1.19.3"
   }
 }
+
