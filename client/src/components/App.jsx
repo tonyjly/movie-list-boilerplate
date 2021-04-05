@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieList from './MovieList.jsx';
 // import MovieListItem from './MovieListItem.jsx';
+import SearchMovie from './SearchMovie.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -13,17 +14,28 @@ class App extends React.Component {
         {title: 'The Grey'},
         {title: 'Sunshine'},
         {title: 'Ex Machina'}
-      ]
+      ],
+      query: ''
     };
 
     // bind functions
+    this.searchMovie = this.searchMovie.bind(this);
   }
+
+  searchMovie(event) {
+    this.setState({
+      query: event.target.value
+    }, () => {
+      console.log('query:', this.state.query);
+    });
+  };
 
   render() {
     return (
       <div>
         <h1>MovieList</h1>
-          <MovieList list={this.state.movies} />
+        <SearchMovie search={this.searchMovie} />
+        <MovieList list={this.state.movies} />
       </div>
     )
   }
