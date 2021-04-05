@@ -14,15 +14,38 @@ class App extends React.Component {
         {title: 'Sunshine'},
         {title: 'Ex Machina'}
       ],
+      add: '',
       query: ''
     };
 
+    this.addMovieText = this.addMovieText.bind(this);
+    this.addMovieClick = this.addMovieClick.bind(this);
     this.searchMovie = this.searchMovie.bind(this);
+  };
+
+  // Add movie: state
+  addMovieText(event) {
+    this.setState({add: event.target.value}, () => {console.log('add', this.state.add)});
+  };
+
+  // Add movie: click
+  addMovieClick(event) {
+    event.preventDefault();
+    const emptyQuery = this.state.add === '';
+
+    if (!emptyQuery) {
+      const newMovie = {};
+      newMovie.title = this.state.add;
+      this.setState(() => {
+        this.state.movies.push(newMovie)
+        return this.state.movies;
+      });
+    };
   };
 
   // Search/query text
   searchMovie(event) {
-    this.setState({query: event.target.value});
+    this.setState({query: event.target.value}, () => {console.log('query', this.state.query)});
   };
 
   render() {
@@ -35,7 +58,7 @@ class App extends React.Component {
     return (
       <div>
         <span class="title"><a href="/"><h2>MovieList</h2></a></span>
-        <SearchMovie search={this.searchMovie} /><br/>
+        <SearchMovie add={this.addMovieText} addClick={this.addMovieClick} search={this.searchMovie} /><br/>
         <MovieList list={results} />
       </div>
     );

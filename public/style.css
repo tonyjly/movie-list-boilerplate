@@ -29,8 +29,9 @@ li {
   align-content: left;
 }
 
-.search {
+.addSearch {
   padding: 0.5em 0.5em;
+  outline: none;
 }
 
 .btn {
