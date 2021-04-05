@@ -50,6 +50,14 @@ li {
   background-color: green;
   border: none;
   outline: none;
+  font-weight: bold;
+}
+
+.unwatched {
+  color: green;
+  background-color: white;
+  border: none;
+  outline: none;
 }
 
 .right {

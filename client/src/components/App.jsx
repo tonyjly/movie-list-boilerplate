@@ -8,9 +8,9 @@ class App extends React.Component {
 
     this.state = {
       movies: [
-        {title: 'Mean Girls'},
+        {title: 'Mean Girls', watched: true},
         {title: 'Hackers'},
-        {title: 'The Grey'},
+        {title: 'The Grey', watched: true},
         {title: 'Sunshine'},
         {title: 'Ex Machina'}
       ],
