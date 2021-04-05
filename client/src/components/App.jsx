@@ -21,6 +21,7 @@ class App extends React.Component {
     this.addMovieText = this.addMovieText.bind(this);
     this.addMovieClick = this.addMovieClick.bind(this);
     this.searchMovie = this.searchMovie.bind(this);
+    this.toggleWatched = this.toggleWatched.bind(this);
   };
 
   // Add movie: state
@@ -45,6 +46,11 @@ class App extends React.Component {
   // Search/query text
   searchMovie(event) {
     this.setState({query: event.target.value}, () => {console.log('query', this.state.query)});
+  };
+
+  // Toggle Watched state
+  toggleWatched(event) {
+    event.preventDefault();
   };
 
   render() {
