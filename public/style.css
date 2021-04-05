@@ -48,16 +48,16 @@ li {
 
 .watched {
   color: white;
-  background-color: grey;
+  background-color: green;
   border: none;
   outline: none;
   font-weight: bold;
-  font-family: Lato, Helvetica, Arial, sans-serif
+  font-family: Lato, Helvetica, Arial, sans-serif;
 }
 
 .unwatched {
   color: white;
-  background-color: green;
+  background-color: grey;
   border: none;
   outline: none;
   font-family: Lato, Helvetica, Arial, sans-serif
