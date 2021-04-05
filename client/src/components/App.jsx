@@ -18,27 +18,26 @@ class App extends React.Component {
       query: ''
     };
 
-    // bind functions
     this.searchMovie = this.searchMovie.bind(this);
-  }
+  };
 
   searchMovie(event) {
     this.setState({
       query: event.target.value
     }, () => {
-      console.log('query:', this.state.query);
+      console.log('this.state.query:', this.state.query);
     });
   };
 
   render() {
     return (
       <div>
-        <h1>MovieList</h1>
+        <h2>MovieList</h2>
         <SearchMovie search={this.searchMovie} />
         <MovieList list={this.state.movies} />
       </div>
-    )
-  }
+    );
+  };
 };
 
 export default App;

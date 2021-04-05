@@ -22,12 +22,16 @@ ul {
   align-content: left;
 }
 
+.search {
+  padding: 0.5em 0.5em;
+}
+
 .btn {
   color: white;
   background-color: gray;
   display: inline-block;
   border: solid 1px transparent;
   border-radius: 4px;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.5em;
   outline: none;
 }
