@@ -51,6 +51,7 @@ class App extends React.Component {
   // Toggle Watched state
   toggleWatched(event) {
     event.preventDefault();
+
   };
 
   render() {
